@@ -5,26 +5,31 @@ Namespace Controllers
     Public Class Test2Controller
         Inherits ApiController
 
+        ' api/Test2/GetList
         <HttpPost>
         Public Function GetList(<FromBody()> ByVal poInputParam As Test2InputParam) As List(Of TestDTO)
 
         End Function
 
+        ' api/Test2/GetRecord
         <HttpPost>
         Public Function GetRecord(<FromBody()> ByVal poInputParam As Test2InputParam) As TestDTO
 
         End Function
 
+        ' api/Test2/Add
         <HttpPost>
         Public Sub Add(<FromBody()> ByVal poEntity As TestDTO)
 
         End Sub
 
+        ' api/Test2/Edit
         <HttpPost>
         Public Sub Edit(<FromBody()> ByVal poEntity As TestDTO)
 
         End Sub
 
+        ' api/Test2/Delete
         <HttpPost>
         Public Sub Delete(<FromBody()> ByVal poEntity As TestDTO)
 
