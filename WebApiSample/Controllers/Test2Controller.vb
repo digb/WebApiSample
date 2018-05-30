@@ -33,7 +33,8 @@ Namespace Controllers
     End Class
 
     Public Class Test2InputParam
-        Property pcCompanyId As String
+        Public Property pcCompanyId As String
+        Public Property pcEntityId As Integer
     End Class
 
 End Namespace
