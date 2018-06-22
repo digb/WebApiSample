@@ -2,6 +2,7 @@
 Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Web.Http
+'Imports R_Web.Api.Filters
 
 Public Module WebApiConfig
     Public Sub Register(ByVal config As HttpConfiguration)
@@ -15,10 +16,6 @@ Public Module WebApiConfig
             routeTemplate:="api/{controller}/{action}"
         )
 
-        'config.Routes.MapHttpRoute(
-        '    name:="DefaultApi",
-        '    routeTemplate:="api/{controller}/{id}",
-        '    defaults:=New With {.id = RouteParameter.Optional}
-        ')
+        'config.Filters.Add(New BasicAuthenticationAttribute())
     End Sub
 End Module

@@ -5,37 +5,48 @@ Namespace Controllers
     Public Class TestController
         Inherits ApiController
 
-        ' GET: api/Test
-        Public Function GetList() As List(Of TestDTO)
-            Dim DAO As New DataAccess
-            Return DAO.GetList()
+        ' api/Test2/GetList
+        <HttpPost>
+        Public Function GetList(<FromBody()> ByVal poInputParam As Test2InputParam) As List(Of TestDTO)
+            Try
+
+            Catch ex As Exception
+                Throw ex
+            End Try
+
         End Function
 
-        ' GET: api/Test/5
-        Public Function GetRecord(ByVal id As Integer) As TestDTO
-            Dim DAO As New DataAccess
-            Return DAO.GetRecord(New TestDTO With {.iId = id})
+        ' api/Test2/GetRecord
+        <HttpPost>
+        Public Function GetRecord(<FromBody()> ByVal poInputParam As Test2InputParam) As TestDTO
+
         End Function
 
-        ' POST: api/Test
-        Public Sub PostValue(<FromBody()> ByVal poEntity As TestDTO)
-            Dim DAO As New DataAccess
-            DAO.Create(poEntity)
+        ' api/Test2/Add
+        <HttpPost>
+        Public Sub Add(<FromBody()> ByVal poEntity As TestDTO)
+
         End Sub
 
-        ' PUT: api/Test/5
-        Public Sub PutValue(ByVal id As Integer, <FromBody()> ByVal poEntity As TestDTO)
-            poEntity.iId = id
+        ' api/Test2/Edit
+        <HttpPost>
+        Public Sub Edit(<FromBody()> ByVal poEntity As TestDTO)
 
-            Dim DAO As New DataAccess
-            DAO.Update(poEntity)
         End Sub
 
-        ' DELETE: api/Test/5
-        Public Sub DeleteValue(ByVal id As Integer)
-            Dim DAO As New DataAccess
-            DAO.Delete(New TestDTO With {.iId = id})
+        ' api/Test2/Delete
+        <HttpPost>
+        Public Sub Delete(<FromBody()> ByVal poEntity As TestDTO)
+
         End Sub
 
     End Class
+
+    Public Class Test2InputParam
+        Public Property pcCompanyId As String
+        Public Property pcEntityId As Integer
+        Public Property pcUsrId As String
+        Public Property pcPasswd As String
+    End Class
+
 End Namespace
