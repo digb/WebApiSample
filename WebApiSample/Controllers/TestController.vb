@@ -5,7 +5,7 @@ Namespace Controllers
     Public Class TestController
         Inherits ApiController
 
-        ' api/Test2/GetList
+        ' api/Test/GetList
         <HttpPost>
         Public Function GetList(<FromBody()> ByVal poInputParam As Test2InputParam) As List(Of TestDTO)
             Try
@@ -16,25 +16,25 @@ Namespace Controllers
 
         End Function
 
-        ' api/Test2/GetRecord
+        ' api/Test/GetRecord
         <HttpPost>
         Public Function GetRecord(<FromBody()> ByVal poInputParam As Test2InputParam) As TestDTO
 
         End Function
 
-        ' api/Test2/Add
+        ' api/Test/Add
         <HttpPost>
         Public Sub Add(<FromBody()> ByVal poEntity As TestDTO)
 
         End Sub
 
-        ' api/Test2/Edit
+        ' api/Test/Edit
         <HttpPost>
         Public Sub Edit(<FromBody()> ByVal poEntity As TestDTO)
 
         End Sub
 
-        ' api/Test2/Delete
+        ' api/Test/Delete
         <HttpPost>
         Public Sub Delete(<FromBody()> ByVal poEntity As TestDTO)
 
