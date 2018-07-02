@@ -34,7 +34,7 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
+    <script src="https://kendo.cdn.telerik.com/2018.1.221/js/jquery.min.js"></script>
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required:=False)
 </body>

@@ -7,9 +7,10 @@ Namespace Controllers
 
         ' api/Test/GetList
         <HttpPost>
-        Public Function GetList(<FromBody()> ByVal poInputParam As Test2InputParam) As List(Of TestDTO)
+        Public Function GetList(<FromBody()> ByVal poParam As GetListInputParam) As List(Of TestDTO)
             Try
-
+                Dim DAO As New DataAccess
+                Return DAO.GetList(poParam.piDataCount)
             Catch ex As Exception
                 Throw ex
             End Try
@@ -18,35 +19,52 @@ Namespace Controllers
 
         ' api/Test/GetRecord
         <HttpPost>
-        Public Function GetRecord(<FromBody()> ByVal poInputParam As Test2InputParam) As TestDTO
-
+        Public Function GetRecord(<FromBody()> ByVal poEntity As TestDTO) As TestDTO
+            Try
+                Dim DAO As New DataAccess
+                Return DAO.GetRecord(poEntity)
+            Catch ex As Exception
+                Throw ex
+            End Try
         End Function
 
         ' api/Test/Add
         <HttpPost>
         Public Sub Add(<FromBody()> ByVal poEntity As TestDTO)
-
+            Try
+                Dim DAO As New DataAccess
+                DAO.Create(poEntity)
+            Catch ex As Exception
+                Throw ex
+            End Try
         End Sub
 
         ' api/Test/Edit
         <HttpPost>
         Public Sub Edit(<FromBody()> ByVal poEntity As TestDTO)
-
+            Try
+                Dim DAO As New DataAccess
+                DAO.Update(poEntity)
+            Catch ex As Exception
+                Throw ex
+            End Try
         End Sub
 
         ' api/Test/Delete
         <HttpPost>
         Public Sub Delete(<FromBody()> ByVal poEntity As TestDTO)
-
+            Try
+                Dim DAO As New DataAccess
+                DAO.Delete(poEntity)
+            Catch ex As Exception
+                Throw ex
+            End Try
         End Sub
 
     End Class
 
-    Public Class Test2InputParam
-        Public Property pcCompanyId As String
-        Public Property pcEntityId As Integer
-        Public Property pcUsrId As String
-        Public Property pcPasswd As String
+    Public Class GetListInputParam
+        Public Property piDataCount As Integer
     End Class
 
 End Namespace

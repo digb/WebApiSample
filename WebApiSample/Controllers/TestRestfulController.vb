@@ -8,7 +8,7 @@ Namespace Controllers
         ' GET: api/TestRestful
         Public Function GetList() As List(Of TestDTO)
             Dim DAO As New DataAccess
-            Return DAO.GetList()
+            Return DAO.GetList(100)
         End Function
 
         ' GET: api/TestRestful/5

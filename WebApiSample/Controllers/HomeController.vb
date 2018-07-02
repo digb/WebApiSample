@@ -6,4 +6,9 @@
 
         Return View()
     End Function
+
+    Function JQuerySample() As ActionResult
+        Return View()
+    End Function
+
 End Class

@@ -2,12 +2,12 @@
 
 Public Class DataAccess
 
-    Public Function GetList() As List(Of TestDTO)
+    Public Function GetList(piDataCount As Integer) As List(Of TestDTO)
         Dim result As New List(Of TestDTO)
         Dim memCache = MemoryCache.Default
 
         If Not memCache.Contains("testnav_getlist") Then
-            For i = 1 To 100
+            For i = 1 To piDataCount
                 result.Add(New TestDTO With {
                        .iId = i,
                        .cString = "Item " & i,

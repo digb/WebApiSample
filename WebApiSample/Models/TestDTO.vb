@@ -1,4 +1,5 @@
 ﻿Public Class TestDTO
+    Public Property cCompanyId As String
     Public Property iId As Integer
     Public Property cString As String
     Public Property nDecimal As Decimal
