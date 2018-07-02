@@ -16,12 +16,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", New With { .area = "" }, New With {Key .[class] = "navbar-brand"})
+                @Html.ActionLink("Application name", "Index", "Home", New With {.area = ""}, New With {Key .[class] = "navbar-brand"})
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", New With { .area = "" }, Nothing)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", New With { .area = "" }, Nothing)</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", New With {.area = ""}, Nothing)</li>
+                    <li>@Html.ActionLink("API", "Index", "Help", New With {.area = ""}, Nothing)</li>
                 </ul>
             </div>
         </div>
@@ -34,7 +34,7 @@
         </footer>
     </div>
 
-    <script src="https://kendo.cdn.telerik.com/2018.1.221/js/jquery.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required:=False)
 </body>
