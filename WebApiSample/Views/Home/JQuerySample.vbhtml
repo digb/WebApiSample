@@ -45,13 +45,7 @@ End Code
         $realta.callService(
             gcBaseUrl + "/api/Test/GetRecord",
             {
-                "cCompanyId": null,
-                "iId": 2,
-                "cString": "Item 2",
-                "nDecimal": 0.2,
-                "cDatee": null,
-                "cTime": null,
-                "lBoolean": true,
+                "iId": 2
             },
             function (msg) {
                 console.log(msg);
@@ -67,12 +61,12 @@ End Code
             gcBaseUrl + "/api/Test/Add",
             {
                 "iId": 999,
-                "cString": "Item 2",
+                "cString": "Item UNKNOWN",
                 "nDecimal": 0.2,
                 "lBoolean": true,
             },
             function (msg) {
-                console.log(msg);
+                console.log("add id 999");
             },
             function (jqXHR, textStatus) {
                 alert("Request failed: " + textStatus);
@@ -90,7 +84,7 @@ End Code
                 "lBoolean": true,
             },
             function (msg) {
-                console.log(msg);
+                console.log("edit item 999");
             },
             function (jqXHR, textStatus) {
                 alert("Request failed: " + textStatus);
@@ -101,8 +95,11 @@ End Code
     function btnDelete_click() {
         $realta.callService(
             gcBaseUrl + "/api/Test/Delete",
+            {
+                "iId": 999
+            },
             function (msg) {
-                console.log(msg);
+                console.log("delete id 999");
             },
             function (jqXHR, textStatus) {
                 alert("Request failed: " + textStatus);
@@ -111,8 +108,10 @@ End Code
     }
 </script>
 
-<button type="button" onclick="btnGetList_click()">Get List</button>
-<button type="button" onclick="btnGetRecord_click()">Get Record</button>
-<button type="button" onclick="btnAdd_click()">Add</button>
-<button type="button" onclick="btnEdit_click()">Edit</button>
-<button type="button" onclick="btnDelete_click()">Delete</button>
+<div class="col-sm-12">
+    <button type="button" class="btn" onclick="btnGetList_click()">Get List</button>
+    <button type="button" class="btn" onclick="btnGetRecord_click()">Get Record</button>
+    <button type="button" class="btn" onclick="btnAdd_click()">Add</button>
+    <button type="button" class="btn" onclick="btnEdit_click()">Edit</button>
+    <button type="button" class="btn" onclick="btnDelete_click()">Delete</button>
+</div>
