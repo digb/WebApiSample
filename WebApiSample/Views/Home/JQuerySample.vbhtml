@@ -34,6 +34,8 @@ End Code
             },
             function (msg) {
                 console.log(msg);
+                $("#btnGetRecord").prop('disabled', false);
+                $("#btnAdd").prop('disabled', false);
             },
             function (jqXHR, textStatus) {
                 alert("Request failed: " + textStatus);
@@ -67,6 +69,8 @@ End Code
             },
             function (msg) {
                 console.log("add id 999");
+                $("#btnEdit").prop('disabled', false);
+                $("#btnDelete").prop('disabled', false);
             },
             function (jqXHR, textStatus) {
                 alert("Request failed: " + textStatus);
@@ -100,6 +104,8 @@ End Code
             },
             function (msg) {
                 console.log("delete id 999");
+                $("#btnEdit").prop('disabled', true);
+                $("#btnDelete").prop('disabled', true);
             },
             function (jqXHR, textStatus) {
                 alert("Request failed: " + textStatus);
@@ -110,8 +116,8 @@ End Code
 
 <div class="col-sm-12">
     <button type="button" class="btn" onclick="btnGetList_click()">Get List</button>
-    <button type="button" class="btn" onclick="btnGetRecord_click()">Get Record</button>
-    <button type="button" class="btn" onclick="btnAdd_click()">Add</button>
-    <button type="button" class="btn" onclick="btnEdit_click()">Edit</button>
-    <button type="button" class="btn" onclick="btnDelete_click()">Delete</button>
+    <button type="button" class="btn" id="btnGetRecord" onclick="btnGetRecord_click()" disabled>Get Record</button>
+    <button type="button" class="btn" id="btnAdd" onclick="btnAdd_click()" disabled>Add</button>
+    <button type="button" class="btn" id="btnEdit" onclick="btnEdit_click()" disabled>Edit</button>
+    <button type="button" class="btn" id="btnDelete" onclick="btnDelete_click()" disabled>Delete</button>
 </div>
