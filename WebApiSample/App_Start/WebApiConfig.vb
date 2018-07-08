@@ -7,6 +7,7 @@ Imports System.Web.Http
 Public Module WebApiConfig
     Public Sub Register(ByVal config As HttpConfiguration)
         ' Web API configuration and services
+        'config.Filters.Add(New BasicAuthenticationAttribute())
 
         ' Web API routes
         config.MapHttpAttributeRoutes()
@@ -15,7 +16,5 @@ Public Module WebApiConfig
             name:="ActionApi",
             routeTemplate:="api/{controller}/{action}"
         )
-
-        'config.Filters.Add(New BasicAuthenticationAttribute())
     End Sub
 End Module
