@@ -2,12 +2,13 @@
 Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Web.Http
-'Imports R_Web.Api.Filters
+Imports R_Web.Api.Filters
 
 Public Module WebApiConfig
     Public Sub Register(ByVal config As HttpConfiguration)
         ' Web API configuration and services
-        'config.Filters.Add(New BasicAuthenticationAttribute())
+        config.Filters.Add(New BasicAuthenticationAttribute())
+        config.Filters.Add(New R_ExceptionAttribute())
 
         ' Web API routes
         config.MapHttpAttributeRoutes()
